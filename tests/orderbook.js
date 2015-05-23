@@ -88,6 +88,54 @@ test('get order', function() {
   assert.deepEqual(JSON.parse(JSON.stringify(order)), expected);
 });
 
+test('get ask', function() {
+  var apiState = {
+    asks: [
+      [201, 10, 'super-duper-id-2']
+    ],
+    bids: [
+      [200, 10, 'super-duper-id']
+    ]
+  };
+
+  var orderbook = new CoinbaseExchange.Orderbook();
+  orderbook.state(apiState);
+
+  assert.equal(orderbook.getAsk(), 201);
+});
+
+test('get bid', function() {
+  var apiState = {
+    asks: [
+      [201, 10, 'super-duper-id-2']
+    ],
+    bids: [
+      [200, 10, 'super-duper-id']
+    ]
+  };
+
+  var orderbook = new CoinbaseExchange.Orderbook();
+  orderbook.state(apiState);
+
+  assert.equal(orderbook.getBid(), 200);
+});
+
+test('get spread', function() {
+  var apiState = {
+    asks: [
+      [201, 10, 'super-duper-id-2']
+    ],
+    bids: [
+      [200, 10, 'super-duper-id']
+    ]
+  };
+
+  var orderbook = new CoinbaseExchange.Orderbook();
+  orderbook.state(apiState);
+
+  assert.equal(orderbook.getSpread(), 1);
+});
+
 test('partial order match', function() {
   var apiState = {
     bids: [
