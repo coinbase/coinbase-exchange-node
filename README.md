@@ -265,8 +265,14 @@ The orderbook has the following methods:
 `OrderbookSync` creates a local mirror of the orderbook on Coinbase Exchange using
 `Orderbook` and `WebsocketClient` as described [here](https://docs.exchange.coinbase.com/#real-time-order-book).
 
+Additionally, orders can be tracked through the `trackOrder(orderId)` method. An instance of the [EventEmitter]
+(https://nodejs.org/api/events.html#events_class_events_eventemitter) class will be returned. The type of order types
+(i.e. open, done, match, change) represent events that are emitted. The full websocket message is passed to the event
+callback function.
+
 ```javascript
 var CoinbaseExchange = require('coinbase-exchange');
 var orderbookSync = new CoinbaseExchange.OrderbookSync();
 console.log(orderbookSync.book.state());
+orderbookSync.trackOrder(orderId).once('done', function(data) { console.log(data); });
 ```
