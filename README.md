@@ -256,6 +256,9 @@ var orderbook = new CoinbaseExchange.Orderbook();
 The orderbook has the following methods:
 * `state(book)`
 * `get(orderId)`
+* `getAsk()`
+* `getBid()`
+* `getSpread()`
 * `add(order)`
 * `remove(orderId)`
 * `match(match)`
