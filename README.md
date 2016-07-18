@@ -1,6 +1,6 @@
 # DEPRECATED
 
-This package has been deprecated and will receive any further updates.
+This package has been deprecated and will not receive any further updates.
 
 Please use the new official client [gdax-node](https://github.com/coinbase/gdax-node).
 
