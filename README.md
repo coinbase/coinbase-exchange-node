@@ -1,4 +1,10 @@
-# Coinbase Exchange 
+# DEPRECATED
+
+This package has been deprecated and will receive any further updates.
+
+Please use the new official client [gdax-node](https://github.com/coinbase/gdax-node).
+
+# Coinbase Exchange
 The official Node.js library for the [GDAX
 API](https://docs.gdax.com/) (formerly Coinbase Exchange).
 
@@ -210,7 +216,7 @@ authedClient.cancelOrders(callback);
 // `cancelAllOrders` will handle making these requests for you asyncronously.
 // Also you can add a product_id param to only delete orders of that product
 
-// The response will be the response of the last call and the data will 
+// The response will be the response of the last call and the data will
 // have the order ID's of all your deleted orders
 authedClient.cancelAllOrders({product_id: 'BTC-USD'}, callback);
 ```
@@ -265,8 +271,13 @@ authedClient.withdraw(withdrawParamsBTC, callback);
 ```
 
 ### Websocket client
-The `WebsocketClient` allows you to connect and listen to the 
-[exchange websocket messages](https://docs.gdax.com/#messages). 
+<<<<<<< e614fa20dfbc8ce07ff909ddfd96e559f8925ffd
+The `WebsocketClient` allows you to connect and listen to the
+[exchange websocket messages](https://docs.gdax.com/#messages).
+=======
+The `WebsocketClient` allows you to connect and listen to the
+[exchange websocket messages](https://docs.exchange.coinbase.com/#messages).
+>>>>>>> Add deprecation notice
 ```javascript
 var CoinbaseExchange = require('coinbase-exchange');
 var websocket = new CoinbaseExchange.WebsocketClient();
@@ -277,7 +288,7 @@ The following events can be emitted from the `WebsocketClient`:
 * `message`
 * `close`
 
-### Orderbook 
+### Orderbook
 `Orderbook` is a data structure that can be used to store a local copy of the orderbook.
 ```javascript
 var CoinbaseExchange = require('coinbase-exchange');
