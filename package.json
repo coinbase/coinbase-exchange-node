@@ -23,12 +23,13 @@
     "lodash.partial": "3.0.0",
     "nock": "3.6.0",
     "num": "0.2.1",
-    "request": "2.51.0",
-    "ws": "0.7.0"
+    "request": "2.74.0",
+    "ws": "1.1.1"
   },
   "description": "Client for the Coinbase Exchange API",
   "devDependencies": {
-    "mocha": "1.20.1"
+    "mocha": "1.20.1",
+    "nsp": "2.6.1"
   },
   "directories": {
     "lib": "./lib"
@@ -50,6 +51,7 @@
     "url": "git://github.com/coinbase/coinbase-exchange-node.git"
   },
   "scripts": {
-    "test": "mocha --ui qunit --bail --reporter list tests/*.js"
+    "test": "mocha --ui qunit --bail --reporter list tests/*.js",
+    "scan_packages": "nsp check --output summary"
   }
 }
